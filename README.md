@@ -1,258 +1,316 @@
-![Git Extensions logo](https://cdn.rawgit.com/gitextensions/gitextensions/master/Logo/git-extensions-logo.svg)
+![ROX by Rollout](https://1ko9923xosh2dsbjsxpwqp45-wpengine.netdna-ssl.com/wp-content/themes/rollout/images/rollout_white_logo1.png)
 
-# Git Extensions
+[![Integration status](https://app.rollout.io/badges/5e35cb3cbe11cd00091e4e6f)](https://app.rollout.io/app/5e35c9a18edce4000a2018da/settings/info)
 
-Git Extensions is a standalone UI tool for managing git repositories.
-It also integrates with Windows Explorer and Microsoft Visual Studio (2015/2017/2019).
-
-Have a question? Come and talk to us: [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gitextensions/gitextensions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-## Current Status
-
-<a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/gitextensions/backers/badge.svg" /></a> <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/gitextensions/sponsors/badge.svg" /></a>
-
-The work has been [split into two streams](https://github.com/gitextensions/gitextensions/wiki/Compare-versions):
- * version 3.x - **[Download it now](https://github.com/gitextensions/gitextensions/releases/latest)** or install it with [Chocolatey](https://chocolatey.org/packages/gitextensions) or [AppGet](https://appget.net/packages/i/gitextensions).
- * version 2.5x
-
-### Version 3.x
-
-This stream contains the code for the new major version with a number of significant changes&mdash;both to the app and the codebase.
-For more details please refer to [versions comparison](https://github.com/gitextensions/gitextensions/wiki/Compare-versions).
-
-<table>
-  <tr>
-    <th>&nbsp;</th>
-    <th>Windows only</th>
-  </tr>
-  <tr>
-    <td>
-      Runtime environment
-    </td>
-    <td>
-      MS Windows 7SP1+ <br />
-      MS .NET Framework 4.6.1+
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Development
-    </td>
-    <td>
-      MS VS 2017 v15.7+, C#7.3<br />
-      VC++ (inc. ATL for x86/x64 for installer)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Current dev status
-    </td>
-    <td>
-      <a href="https://ci.appveyor.com/project/gitextensions/gitextensions/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/yo5kw7sl6da8danr/branch/master?svg=true" style="max-width:100%;"></a> <a href="https://codecov.io/gh/gitextensions/gitextensions"><img alt="codecov.io" src="https://codecov.io/gh/gitextensions/gitextensions/branch/master/graph/badge.svg" style="max-width:100%;"></a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Translations
-    </td>
-    <td>
-      <a target="_blank" style="text-decoration:none; color:black; font-size:66%" href="https://github.com/gitextensions/gitextensions/wiki/Translations" title="More information in the wiki"><img src="https://ds0k0en9abmn1.cloudfront.net/static/charts/images/tx-logo-micro.646b0065fce6.png" ></a>
-    </td>
-  </tr>
-</table>
+This repository is a YAML represnetation for Rollout configuration, it is connected (see badge for status) to Rollout service via [Rollout's github app](https://github.com/apps/rollout-io)
+Configuration as code allows the entire configuration of Rollout's state to be stored as source code. It integrates Rollout's UI with engineering existing environment. This approach brings a lot of benefits.
 
 
-### Version 2.5x
+# What is Rollout 
+Rollout is a multi-platform, infrastructure as code, open source, software as a service feature management and remote configuration solution. 
 
-This stream contains the last cross-platform version running both on Windows (MS .NET Framework) and on Linux/Mac (Mono).
-The code is in maintenance mode with no significant active development planned. Only certain bug fixes are currently ported across, however there may be consideration given for certain features to be ported across from the v3.x stream.
+# What Are Feature Flags
 
-<table>
-  <tr>
-    <th>&nbsp;</th>
-    <th>Windows</th>
-    <th>Linux/Mac</th>
-  </tr>
-  <tr>
-    <td>
-      Runtime environment
-    </td>
-    <td>
-      MS Windows 7SP1+ <br />
-      MS .NET Framework 4.6.1+
-    </td>
-    <td>
-      <a href="https://github.com/gitextensions/gitextensions/wiki/How-To:-run-Git-Extensions-on-Linux">Linux / Mac (possible)</a><br />
-      <a href="http://www.mono-project.com/download/">Mono 5.0+ (Recommended 5.14.0 or later)</a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Development
-    </td>
-    <td>
-      MS VS 2015/2017, C#6
-    </td>
-    <td>
-      MonoDevelop / JetBrains Rider / MS VS for Mac
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Current dev status
-    </td>
-    <td colspan=2>
-      <a href="https://ci.appveyor.com/project/gitextensions/gitextensions/branch/release/2.51"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/yo5kw7sl6da8danr/branch/release/2.51?svg=true" style="max-width:100%;"></a> <a href="https://codecov.io/gh/gitextensions/gitextensions"><img alt="codecov.io" src="https://codecov.io/gh/gitextensions/gitextensions/branch/release/2.51/graph/badge.svg" style="max-width:100%;"></a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Translations
-    </td>
-    <td colspan=2>
-      <a target="_blank" style="text-decoration:none; color:black; font-size:66%" href="https://github.com/gitextensions/gitextensions/wiki/Translations" title="More information in the wiki"><img src="https://ds0k0en9abmn1.cloudfront.net/static/charts/images/tx-logo-micro.646b0065fce6.png" ></a>
-    </td>
-  </tr>
-</table>
+Feature Flags is a powerfull technique based on remotetly and conditionaly opening/closing features threw the entire feature developement and delivery process.  As Martin Fowler writes on [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
+
+> Feature Toggles (often also refered to as Feature Flags) are a powerful technique, allowing teams to modify system behavior without changing code. They fall into various usage categories, and it's important to take that categorization into account when implementing and managing toggles. Toggles introduce complexity. We can keep that complexity in check by using smart toggle implementation practices and appropriate tools to manage our toggle configuration, but we should also aim to constrain the number of toggles in our system.
+
+You can read more about the Advantages of having Rollout configuration stored and treated as code in [Rollout's support doc](https://support.rollout.io/docs/configuration-as-code)
 
 
-## Downloads
-<a href="https://github.com/gitextensions/gitextensions/releases" rel="nofollow" style="vertical-align: -webkit-baseline-middle;"><img src="https://img.shields.io/github/downloads/gitextensions/gitextensions/total.svg?label=GitHub%20downloads%20(total)&cacheSeconds=86400"></a> <a href="https://sourceforge.net/projects/gitextensions/files" rel="nofollow" style="vertical-align: -webkit-baseline-middle;"><img src="https://img.shields.io/sourceforge/dt/gitextensions.svg?label=SourceForge%20downloads%20(total)&cacheSeconds=86400"></a> <a href="https://chocolatey.org/packages/gitextensions" rel="nofollow" style="vertical-align: -webkit-baseline-middle;"><img src="https://img.shields.io/chocolatey/dt/gitextensions.svg?label=Chocolatey%20downloads%20(total)&cacheSeconds=86400"></a>
+# Repository, Directories and YAML structure
+## Branches are Environments
 
-<table>
-  <tr>
-    <td>
-      <strong>v3.3.1</strong>
-    </td>
-    <td>
-      <a href="https://github.com/gitextensions/gitextensions/releases/latest">[ Download ]</a><br />
-      <a href="https://github.com/gitextensions/gitextensions/releases/latest" rel="nofollow" style="vertical-align: -webkit-baseline-middle;"><img src="https://img.shields.io/github/downloads/gitextensions/gitextensions/latest/total.svg?label=GitHub%20downloads%20(latest)&cacheSeconds=3600"></a> <a href="https://sourceforge.net/projects/gitextensions/" rel="nofollow" style="vertical-align: -webkit-baseline-middle;"><img src="https://img.shields.io/sourceforge/dt/gitextensions/v3.3.1.svg?label=SourceForge%20downloads%20(latest)&cacheSeconds=3600"></a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Current dev stream</strong><br />
-      NB: expect :unicorn: :unicorn: :dragon: :dragon: and :bug: :bug:
-    </td>
-    <td>
-      <a href="https://ci.appveyor.com/project/gitextensions/gitextensions/branch/master/artifacts">[ Download ]</a><br />
-      <a href="https://ci.appveyor.com/project/gitextensions/gitextensions/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/yo5kw7sl6da8danr/branch/master?svg=true" style="max-width:100%;"></a> <a href="https://codecov.io/gh/gitextensions/gitextensions"><img alt="codecov.io" src="https://codecov.io/gh/gitextensions/gitextensions/branch/master/graph/badge.svg" style="max-width:100%;"></a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Visual Studio VSIX (2015/2017/2019)</strong>
-    </td>
-    <td>
-      <a href="https://marketplace.visualstudio.com/items?itemName=HenkWesthuis.GitExtensions">[ Download ]</a> or install from Visual Studio via Extensions
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Visual Studio addin (2010/2012/2013)</strong>
-    </td>
-    <td>
-      Included with installer for the 2.x branch. <a href="https://github.com/gitextensions/gitextensions/releases/tag/v2.51.05">Download and run setup.exe</a><br />
-      <ul>
-        <li><a href="https://github.com/gitextensions/gitextensions/files/2646204/Visual.Studio.2010.Addin.zip">Visual Studio 2010 Addin.zip</a></li>
-        <li><a href="https://github.com/gitextensions/gitextensions/files/2646205/Visual.Studio.2012.Addin.zip">Visual Studio 2012 Addin.zip</a></li>
-        <li><a href="https://github.com/gitextensions/gitextensions/files/2646203/Visual.Studio.2013.Addin.zip">Visual Studio 2013 Addin.zip</a></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Visual Studio Code VSIX</strong><br />
-      Kudos to <a href="https://github.com/pmiossec" class="author text-inherit">@pmiossec</a>
-    </td>
-    <td>
-      <a href="https://marketplace.visualstudio.com/items?itemName=pmiossec.vscode-gitextensions">[ Download ]</a> or install via VSCode<br />
-      NB: Please direct all discussions about the VSIX to <a href="https://github.com/pmiossec/vscode-gitextensions">its own repo</a>.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>IntelliJ platform IDEs</strong><br />
-      Kudos to <a href="https://github.com/DmitryZhelnin" class="author text-inherit">@DmitryZhelnin</a>
-    </td>
-    <td>
-      <a href="https://plugins.jetbrains.com/plugin/11511-gitextensions">[ Download ]</a> or install via IDE Plugins settings<br />
-      NB: Please direct all discussions about this plugin to <a href="https://github.com/DmitryZhelnin/git-extensions-intellij">its own repo</a>.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Git Extensions for VS Code</strong><br />
-      Kudos to <a href="https://github.com/Carl-Hugo" class="author text-inherit">@Carl-Hugo</a>
-    </td>
-    <td>
-        <p>This extension allows users to <strong>Browse with Git Extensions</strong> from the <em>Explorer</em> and the <em>Editor</em>. It supports a single folder and workspaces. Nothing fancier.</p>
-        <p><a href="https://marketplace.visualstudio.com/items?itemName=forevolve.git-extensions-for-vs-code">[ Download ]</a> from the Marketplace or install via VS Code<br />
-        NB: Please direct all discussions about this extension to <a href="https://github.com/ForEvolve/git-extensions-for-vs-code">its own repo</a>.</p>
-    </td>
-  </tr>
-</table>
+Every environment on Rollout dashboard is mapped to a branch in git. The same name that is used for the environment will be used for the branch name. The only exception being Production environment which is mapped to `master` branch 
 
+## Directory structure
 
-# Conduct
+Rollout repository integration creates the following directory structure:
+```
+.
+├── experiments             # Experiments definitions
+│   └──  archived           # Archived experiments definitions
+├── target_groups           # Target groups definitions
+└── README.md              
+```
 
-Project maintainers pledge to foster an open and welcoming environment, and ask contributors to do the same.
+- All experiments are located under the experiment folder
+- All archived experiments are located under the `experiments/archived` folder
 
-For more information see our [code of conduct](CODE_OF_CONDUCT.md).
+## Experiment Examples
+
+### False for all users 
+```yaml
+flag: default.followingView
+type: experiment
+name: following view
+value: false
+```
+This YAML representation in Rollout's dashboard:
+![dashboard](https://files.readme.io/00b37e6-Screen_Shot_2018-12-03_at_11.47.56.png)
+### 50% split
+```yaml
+flag: default.followingView
+type: experiment
+name: following view
+value:
+  - option: true
+    percentage: 50
+```
+This YAML representation in Rollout's dashboard:
+![dashboard](https://files.readme.io/5af4d9e-Screen_Shot_2018-12-03_at_12.01.28.png)
+### Open feature for QA and Beta Users on version 3.0.1, otherwise close it
+```yaml
+flag: default.followingView
+type: experiment
+name: following view
+conditions:
+  - group:
+      name:
+        - QA
+        - Beta Users
+    version:
+      operator: semver-gte
+      semver: 3.0.1
+    value: true
+value: false
+```
+This YAML representation in Rollout's dashboard:
+![dashboard](https://files.readme.io/6884476-Screen_Shot_2018-12-03_at_12.04.13.png)
+### Open feature for all platform beside Android
+```yaml
+flag: default.followingView
+type: experiment
+name: following view
+platforms:
+  - name: Android
+    value: false
+value: true
+```
+Dashboard default platfrom configuration:
+![dashboard](https://files.readme.io/461c854-Screen_Shot_2018-12-04_at_10.19.59.png)
+Dashboard Android configuration:
+![dashboard](https://files.readme.io/1aafd04-Screen_Shot_2018-12-03_at_21.39.52.png)
+## Experiment YAML 
+
+This section describes the yaml scheme for an experiment. It is a composite of 3 schemas:
 
 
-# Shoutouts
-
-* We thank all the people who contribute, the project exists because of you<br />
-  <a href="https://github.com/gitextensions/gitextensions/contributors"><img src="https://opencollective.com/gitextensions/contributors.svg?width=890&button=false" /></a>
-* We thank JetBRAINS for [ReSharper](https://www.jetbrains.com/resharper/) licenses<br />
-  <a href="https://www.jetbrains.com/?from=gitextensions" target="_blank"><img src="./GitUI/Resources/Icons/originals/jetbrains-variant-4.png"></a>
-* We thank [SemanticMerge](https://www.semanticmerge.com) for licenses<br />
-  <a href="https://www.semanticmerge.com" target="_blank"><img src="./GitUI/Resources/Icons/originals/semanticmerge-logo.svg"></a>
-* We thank [SignPath.io](https://signpath.io/) for the free code signing<br />
-  <a href="https://signpath.io/" target="_blank"><img src="./GitUI/Resources/Icons/originals/signpath_logo.png"></a>
-* We thank [SignPath Foundation](https://signpath.org/) for the signing certificate
-* We thank [Yusuke Kamiyamane](http://p.yusukekamiyamane.com/) for the icons ([CCA/3.0](http://creativecommons.org/licenses/by/3.0/))
+-  [Root schema ](doc:configuration-as-code#section-root-schema)  - the base schema for experiment
+-  [Splited Value schema](doc:configuration-as-code#section-splitedvalue-schema)  - Represents a splited value -  a value that is distributed among different instances based on percentage
+-  [Scheduled Value schema](doc:configuration-as-code#section-scheduledvalue-schema)  - Represents a scheduled value -  a value that is based on the time that the flag was evaluated
+-  [Condition schema](doc:configuration-as-code#section-condition-schema)  - Specify how to target a specific audience/device
+-  [Platform schema](doc:configuration-as-code#section-platform-schema)  - Specify how to target a specific platform
 
 
-## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/gitextensions#backer)]
+### Root Schema 
+An Experiment controls the flag value in runtime:
 
-<a href="https://opencollective.com/gitextensions#backers" target="_blank"><img src="https://opencollective.com/gitextensions/backers.svg?width=890"></a>
+```yaml
+# Yaml api version 
+# Optional: defaults to "1.0.0"
+version: Semver 
+
+# Yaml Type (required)
+type: "experiment" 
+
+# The flag being controlled by this experiment (required)
+flag: String 
+
+# The available values that this flag can be
+# Optional=[false, true]
+availableValues: [String|Bool] 
+
+# The name of the experiment
+# Optional: default flag name
+name: String 
+
+# The Description of the experiment 
+# Optional=""
+description: String 
+
+# Indicates if the experiment is active
+# Optional=true
+enabled: Boolean 
+
+# Expriment lables
+# Optional=[]
+labels: [String]|String 
+
+# Stickiness property that controls percentage based tossing 
+# Optional="rox.distict_id"
+stickinessProperty: String
+
+# Platfrom explicit targeting 
+# Optional=[]
+platforms: [Platfrom]  # see Platfrom schema
+
+# Condition and values for default platfomr
+# Optional=[]
+conditions: [Condition] # see Condition schema
+
+# Value when no Condition is met
+# Optional
+#  false for boolean flags 
+#  [] for enum flags  (indicates default value)
+value: String|Boolean|[SplitedValue]|[ScheduledValue]
+```
+
+### SplitedValue Schema
+```yaml
+# Percentage, used for splitting traffic across different values
+# Optional=100
+percentage: Number
+
+# The Value to be delivered 
+option: String|Boolean 
+```
+### ScheduledValue Schema
+```yaml
+# The Date from which this value is relevant
+# Optional=undefined
+from: Date
+
+# Percentage, used for splitting traffic across different values
+# Optional=100
+percentage: Number
+```
+### Condition Schema
+
+The Condition is a pair of condition and value, an array of conditions can be viewed as an if-else statement by the order of conditions
+
+The schema contains three types of condition statements 
+- Dependency - express flag dependencies, by indicating flag name and expected value
+- Groups - a list of target-groups and the operator that indicates the relationship between them (`or`|`and`|`not`) 
+- Version -  comparing the version of 
+[/block]
+The relationship between these items is `and`, meaning:
+       If the dependency is met `and` Groups matches `and` Version matches  `then` flage=value
+
+Here is the Condition schema
+```yaml
+# Condition this flag value with another flag value
+dependency: 
+    # Flag Name
+    flag: String
+    # The expected Flag Value 
+    value: String|Boolean
+
+# Condition flag value based on target group(s)
+group: 
+    # The logical relationship between the groups 
+    # Optional = or
+    operator: or|and|not
+    
+    # Name of target groups
+    name: [String]|String
+
+# Condition flag value based release version
+version: 
+    # The operator to compare version 
+    operator: semver-gt|semver-gte|semver-eq|semver-ne|semver-lt|semver-lte
+
+    # The version to compare to 
+    semver: Semver
+
+# Value when Condition is met
+value: String|Boolean|[SplitedValue]|[ScheduledValue] 
+```
+### Platform Schema
+The platform object indicates a specific targeting for a specific platform
+
+```yaml
+# Name of the platform, as defined in the SDK running
+name: String
+
+# Override the flag name, when needed
+# Optional = experiment flag name
+flag: String
+
+# Condition and values for default platfomr
+# Optional=[]
+conditions: [Condition] # see Condition schema
+
+# Value when no Condition is met
+# Optional
+#  false for boolean flags 
+#  [] for enum flags  (indicates default value)
+value: String|Boolean|[SplitedValue]|[ScheduledValue] # see Value schema
+```
 
 
-## Sponsors
+## Target Group Examples
+### List of matching userid
+```yaml
+type: target-group
+name: QA
+conditions:
+  - operator: in-array
+    property: soundcloud_id
+    operand:
+      - 5c0588007cd291cca474454f
+      - 5c0588027cd291cca4744550
+      - 5c0588037cd291cca4744551
+      - 5c0588047cd291cca4744552
+      - 5c0588047cd291cca4744553
+```
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/gitextensions#sponsor)]
+![dashboard](https://files.readme.io/7affbbe-Screen_Shot_2018-12-03_at_21.47.05.png)
+### Using number property for comparison
 
-<a href="https://opencollective.com/gitextensions/sponsor/0/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/1/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/2/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/3/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/4/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/5/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/6/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/7/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/8/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/gitextensions/sponsor/9/website" target="_blank"><img src="https://opencollective.com/gitextensions/sponsor/9/avatar.svg"></a>
+```yaml
+type: target-group
+name: DJ
+conditions:
+  - operator: gte
+    property: playlist_count
+    operand: 100
+description: Users with a lot of playlists
+```
+
+On rollout Dashboard
+![dashboard](https://files.readme.io/dcb562f-Screen_Shot_2018-12-03_at_21.43.19.png)
+## Target Group YAML
+
+A Target group is a set of rules on top of custom properties that are defined in runtime, it is used in experiments conditions
+
+```yaml
+# Yaml api version 
+# Optional: defaults to "1.0.0"
+version: Semver
+
+# Yaml Type (required)
+type: "target-group"
+
+#Target Group Name
+name: String
+
+# Target Group description
+# Optional = ""
+description: String
+
+# The logical relationship between conditions
+# Optional = and
+operator: or|and
+
+# Array of Conditions that have a logical AND relationship between them
+conditions: 
+    # The Custom property to be conditioned (first operand)
+  - property: String
+
+    # The Operator of the confition 
+    operator: is-undefined|is-true|is-false|eq|ne|gte|gt|lt|lte|regex|semver-gt|semver-eq|semver-gte|semver-gt|semver-lt|semver-lte
+
+    # The Second operand of the condition
+    # Optional - Based on operator  (is-undefined, is-true, is-false)
+    operand: String|Number|[String]
+```
+
+# See Also:
+- Using Roxy docker image for Microservices Automated Testing and Local development [here](https://support.rollout.io/docs/microservices-automated-testing-and-local-development)
+- Configuration as Code advantages [here](https://support.rollout.io/docs/configuration-as-code#section-advantages-of-configuration-as-code)
+- Integration walkthrough [here](https://support.rollout.io/docs/configuration-as-code#section-connecting-to-github-cloud)
 
 
-# Useful Links
-
-* Website: [gitextensions.github.io](https://gitextensions.github.io/)
-* Source code: [github.com/gitextensions/gitextensions](https://github.com/gitextensions/gitextensions)
-* Online manual: [git-extensions-documentation.readthedocs.org](https://git-extensions-documentation.readthedocs.org/en/latest/)
-* Issue tracker: [github.com/gitextensions/gitextensions/issues](https://github.com/gitextensions/gitextensions/issues)
-* Wiki: [github.com/gitextensions/gitextensions/wiki](https://github.com/gitextensions/gitextensions/wiki)
-* Gitter chat: [gitter.im/gitextensions/gitextensions](https://gitter.im/gitextensions/gitextensions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
-# Release History (3.0.1)
-Watch us work on this project.
-
-[![Click to play](https://img.youtube.com/vi/k6DhHbzkZvM/0.jpg)](https://www.youtube.com/watch?v=k6DhHbzkZvM)
-
-# Code Quality Monitor
-
-[![Code quality status](https://codescene.io/projects/5326/status.svg) Full analysis results at **codescene.io**.](https://codescene.io/projects/5326/jobs/latest-successful/results)
+Please contact support@rollout.io for any issues questions or suggestions you might have
